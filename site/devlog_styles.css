@@ -1,0 +1,74 @@
+/*General*/
+*{
+    margin: 0px;
+    /*outline: 5px dotted green;*/
+}
+
+@font-face {
+    font-family: DeterminationMono;
+    src: url("fonts/DTM-Mono.otf");
+}
+
+/*Video Background*/
+#GonerBckg{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -3;
+}
+
+#BckgCover{
+    background-color: black;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 25%;
+    z-index: -2;
+}
+
+/*Title Card*/
+#TitleCardContainer{
+    width: 98vw;
+    height: 99vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Blog Content*/
+@media (min-width: 1100px){
+    .BlogContent{
+        width: 1000px;
+        margin: auto;
+        color: white;
+    }
+    .BigNewline{
+        line-height: 35px;
+    }
+    .BlogContent .BlogSubtitle{
+        font-family: DeterminationMono;
+        font-size: 70px;
+    }
+    .BlogContent p{
+        font-family: DeterminationMono;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1100px){
+    .BlogContent{
+        width: 89%;
+        margin-left: 5%;
+        margin-right: 5%;
+        color: white;
+    }
+    .BlogContent .BlogSubtitle{
+        font-family: DeterminationMono;
+        font-size: 6.25vw;
+    }
+    .BlogContent p{
+        font-family: DeterminationMono;
+        font-size: 4vw;
+    }
+}
