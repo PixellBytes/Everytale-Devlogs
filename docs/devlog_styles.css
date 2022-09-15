@@ -16,6 +16,7 @@
     height: 100vh;
     object-fit: cover;
     z-index: -3;
+    mix-blend-mode: multiply;
 }
 
 #BckgCover{
@@ -37,6 +38,13 @@
 }
 
 /*Blog Content*/
+.BlogContent .Sprite{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
 @media (min-width: 1100px){
     .BlogContent{
         width: 1000px;
@@ -52,7 +60,7 @@
     }
     .BlogContent p{
         font-family: DeterminationMono;
-        font-size: 30px;
+        font-size: 25px;
     }
 }
 
