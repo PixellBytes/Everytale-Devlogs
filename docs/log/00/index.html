@@ -85,10 +85,94 @@
 
         <div class="BigNewline"><br><br><br></div>
 
+        <img src="assets/GONER-Frisk.gif" class="Sprite">
         <center class="BlogSubtitle">[<u>THE FINAL PROTOTYPE</u>]</center>
         <div class="BigNewline"><br></div>
         <p>
-            I am reffering to the previously mentioned "Dynamic Resources Test" as the final prototype because I will not be making any more prototype projects at this point. The game is now in pre-alpha, and work on the offical project 
+            I am reffering to the previously mentioned "Dynamic Resources Test" as "the final prototype" because I will not be making any more prototype projects at this point. The game is now entering pre-alpha, meaning work on the actual project has begun (elaborated on more in [<u>PRODUCTION</u>]). All programming I'll do from this point forward will be coding the version of the game you will eventually get to play. In the meantime, everything I've shown off for <span style="color: red;">Everytale</span> up to this point has been theoretical, so why don't we change that! I believe showing off these prototyped systems are a good way to show my intentions for the final product, even if they're neccesarily scrappy.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            <b>Please keep in mind that everything you're about to see are prototypes.</b> The purpose of prototypes, in my mind, is to rapidly test the implementation of systems before adding said systems to the real project. This allows me to find any potential problems with my implementation early on and avoid technical debt. <b>Everything shown in this section is purposefully basic, unfinished, unpolished, and lacking in UI. These prototypes are not meant to represent the quality of the final game, which will be far cleaner and far more polished.</b>
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Without further ado...
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <img src="assets/prototype_in_editor.png" class="MajorMedia">
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Here's how the prototypes are organized in-editor! There are a variety of points of interests here, but the main thing I would like to point your attention towards is panel on the right side of the screen. There, you can see the player object has a variable called "costumes," which holds an array of costume resources. Every costume resource holds:
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <ul>
+            <li>A spriteframes object that holds the image data that gets used in animations.</li>
+            <li>The frame change delay, which effectively controls how quick the costume's walk animations are.</li>
+            <li>The walking animations frame arrays, which tells Godot how long each walk cycle should be and which sprites from the spriteframes object should called, and at what time.</li>
+            <li>The sprite offset, which determines how far the sprite object should be from the actual center of the player object.</li>
+            <li>A variety variables that control the collision capsule.</li>
+        </ul>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            The point of all this? Those of you who have read the game design document will remeber the costume system, where the idea is that a single "character" can have multiple "costumes" that they can switch between on the fly. I have these settings set up in the editor as this is a prototype, so spending time designing UI would be a waste, but in the playable version of <span style="color: red;">Everytale</span> these will be some of the parameters players will use to create custom characters in game.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            But enough about the editor. What about in-game?
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <video autoplay muted loop playsinline src="assets/CostumeSwitchingCompressed.mp4" class="MajorMedia"></video>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            <i>Bam!</i> As you can see, the player in this case is switching between a variety of costumes on the fly. Costumes can even be changed whilst moving, and everything still works!
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            It should be noted that this is technically an improper use of the costume system. In the real game, the costumes array is intended to be held within a "character" resource (which it is not here), and each costume is supposed to relate to the character. For example, the character resource "Ralsei" might have three costumes: one with his hat on, one with it off, and one from when he wears a suit in Deltarune Chapter 2. The reason I'm choosing to show it off like this with completely unrelated characters is because I want to emphasize how dynamic this system is intended to be. Each of the three costumes shown off have completely different sprites, frame change delays, collision capsule sizes, etc. Costumes can be completely different from each other, <i>and they will still work.</i> This will be huge for player expression, and allow people to create some incredibly creative and dynamic characters.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Speaking of things that are dynamic, did you notice the video's aspect ratio? <i>It's not in 4:3.</i>
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <img src="assets/4-3aspect.png" class="MajorMedia">
+        <div class="BigNewline"><br></div>
+        <img src="assets/16-9aspect.png" class="MajorMedia">
+        <div class="BigNewline"><br></div>
+        <img src="assets/ULTRAWIDEaspect.png" class="MajorMedia">
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Something I never really liked in Undertale, and equally disliked that fangames followed suit with, is that they're in 4:3. This doesn't take full advantage of the screen space and creates two ugly black bars on each side of your screen. Some fanagmes try to remedy this by having some nice art in place of where the black bars would normally be, but that only solves the second problem. Because <span style="color: #488DC1;">Godot</span> has fantastic UI tools, I've decided <span style="color: red;">Everytale</span> will be designed with dynamic aspect ratio support. This means the base aspect ratio is 4:3, but if the window is resized to be an aspect ratio wider than that, the game will keep the same height and increase the number of pixels visible to the left and right. This means that <span style="color: red;">Everytale</span> will be able to fill almost any screen size, which will be especially important for making the mobile version feel good to play. Most critically, however, is that the extra screen space is a great place for the chat to sit!
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <video autoplay muted loop playsinline src="assets/PullUpChatCompressed.mp4" class="MajorMedia"></video>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            And with that, you've seen the majority of what I prototyped before I began working on the real deal! Before we talk about the state of the main project, there is one last thing I'd like to show you. I'm putting this at the end because I don't really know how to transition into this, as it's not that interesting and disconnected from everything else. However, I did put a considerable amount of time into it, so I think you should see anyway.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <video autoplay muted loop playsinline src="assets/BoxTestCompressed.mp4" class="MajorMedia"></video>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            While for the most part I knew how I was going to design <span style="color: red;">Everytale's</span> battle system, I wasn't sure how to make the box the player dodges in dynamic. I wanted to make it so that attacks could move and rotate the box, as I thought that would open up a lot of interesting bullet-hell gameplay oppritunities. I spent a day figuring it out, and the above is the result!
         </p>
 
         <div class="BigNewline"><br><br><br></div>

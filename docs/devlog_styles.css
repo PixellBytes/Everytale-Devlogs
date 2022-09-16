@@ -45,6 +45,10 @@
     max-width: 100%;
 }
 
+.BlogContent .MajorMedia{
+    width: 100%;
+}
+
 @media (min-width: 1100px){
     .BlogContent{
         width: 1000px;
@@ -58,7 +62,7 @@
         font-family: DeterminationMono;
         font-size: 70px;
     }
-    .BlogContent p{
+    .BlogContent p, .BlogContent ul{
         font-family: DeterminationMono;
         font-size: 25px;
     }
@@ -75,7 +79,7 @@
         font-family: DeterminationMono;
         font-size: 6.25vw;
     }
-    .BlogContent p{
+    .BlogContent p, .BlogContent ul{
         font-family: DeterminationMono;
         font-size: 4vw;
     }
