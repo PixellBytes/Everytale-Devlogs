@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../../devlog_styles.css">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everytale Devlog #00</title>
+</head>
+<body style="background-color: #d3bd16;">
+
+    <video autoplay muted loop playsinline src="../../assets/moving_goner_bckg.mp4" id='GonerBckg'></video>
+    <div id="BckgCover"></div>
+
+    <div id="TitleCardContainer">
+        <img id="TitleCardImg" src="assets/log_00_title_card_site_ver.png" style="max-width: 90vmin;">
+    </div>
+
+    <div class="BlogContent">
+
+        <div style="height: 50vh;"></div>
+
+        <img src="assets/anniversary_symbol_year.png" class="Sprite">
+        <center class="BlogSubtitle">[<u>HAPPY ANNIVERSARY</u>]</center>
+        <div class="BigNewline"><br></div>
+        <p>
+            Happy 7th Undertale anniversary everyone, and welcome to the first ever Devlog for <span style="color: red;">Everytale</span>! (If you don't know what that is, the section after this one will get you caught up to speed.) Before I start the log, I figured considering the occasion I should put out my thoughts on how far the series has come at this point. Then again, it's difficult to say something about Undertale that hasn't already been said. As more years pass, it not only becomes more clear just how impactful this series was, but even more suprisingly, how impactful it still <i>is</i>. Undertale/Deltarune's ability to stay in public relevance is unlike any other game I've ever seen, and I think that speaks to just how much these games touch the people who play them.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            I know personally that Toby Fox's work has influenced me more, and been a bigger source of inspiration than any other piece of media. I know that's a bit easy to say when I'm literally making a fangame, but even prior to <span style="color: red;">Everytale's</span> conception, so much of my personal creative work is the result of the way I felt after playing these games. I don't think Undertale or Deltarune are neccesarily the best games I've ever played, but they're my personal favorites for how they made me feel while playing and how that feeling stuck with me even long after I put them down. Speaking on the "after I put them down" part, it's also hard to process how long this series has been a part of my life. I was a kid when Undertale originally released. I even have nostaligc memories of listening to the soundtrack in my bed, not wanting to sleep because I had school the next day. Now, seven years later, its an even bigger part of my life, and I anticipate its going to stay that way for years to come.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            To Toby Fox, Tem, and everyone else who has contributed to making Undertale and Deltarune, thank you.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Oh, also, speaking of anniversaries...
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            It conincidentally happens to be <span style="color: red;">Everytale's</span> one month anniversary as well! (Quite the timing, right?) More specifically, it's been exactly one month since --I posted the first version of the game design document to Reddit [INSERT LINK HERE]--. When I initially made that document, I honestly wasn't fully secure in how I felt about the project. I knew it was something I wanted to make, but I was unsure if it was worth putting in the time and effort required to bring it to completion. I decided I would create <span style="color: red;">Everytale's</span> game design document as an excersice in game development, and then post the finished document to the Undertale and Deltarune subreddits where I would maybe get a double digit number of likes if I was lucky, and I would make my decision based on the reception it got.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            <i>To say I was overwhelmed by the response to those posts would be an understatement.</i> To everyone who engaged with them, from the bottom of my heart...
+        </p>
+        <div class="BigNewline"><br></div>
+        <p>
+            <b>Thank you all so so SO much!!!</b> I never could have anticipated how those posts were going to blow up the way they did. The amount of likes, the great feedback, all the kind words, it was all so much! I'm even still getting occasional rewards on those posts despite the fact that they are a month old, including today. I cannot fully emphasize how much it meant to me seeing the number of who were as excited about the concept as I was. The reception the game design document got took <span style="color: red;">Everytale</span> from a game I felt like I <i>wanted</i> to make, to a game I feel like I <i>need</i> to make. There's no question about it, this is me committing. While I can't promise you'll have a version in your hands soon, I'm in this for the long haul, and I want to take you all on this journey with me. So let me catch you up on everything I've been doing since my last posts!
+        </p>
+
+        <div class="BigNewline"><br><br><br></div>
+
+        <center class="BlogSubtitle">[<u>IF YOU'RE NEW HERE</u>]</center>
+        <div class="BigNewline"><br></div>
+        <p>
+            If you've read up to this point and aren't quite sure what <span style="color: red;">"Everytale"</span> is, allow me to clarify. <span style="color: red;">Everytale</span> is an online Undertale fangame I'm currently developing. The game combines social game elements (i.e. VRChat) with Undertale style turn-based combat for PvE and PvP. Players can hang out, role-play, chat, and battle in an Undertale/Deltarune style world, together! The game will also feature built-in mod tools so players can import/create their own custom characters to play and fight as, all completely cross-platform. If you want more details on the game, you can read the game design document --here [INSERT LINK]--.
+        </p>
+
+        <div class="BigNewline"><br><br><br></div>
+
+        <center class="BlogSubtitle">[<u>CATCHING UP</u>]</center>
+        <div class="BigNewline"><br></div>
+        <p>
+            So, what's been going on with the project since I made those first posts a month ago? Originally, even after I decided I was going to commit to this project, I actually didn't plan to do much. Classes were close to starting back up again at that point, and not wanting to overwhelm myself, I decided I wouldn't work on the project for a few weeks so I could get into the groove of things in my personal life. Then, after those few weeks, I would get the project files set up and ready to develop with. I would follow through... <i>on the second part of this plan.</i> As for the "not working on it for a few weeks" part? Turns out when it comes to game development stuff I can't help myself. I ended up creating prototypes for multiple systems that will be in <span style="color: red;">Everytale</span> to help myself decide how I should implement them in the real project. I named the <span style="color: #488DC1;">Godot</span> project "Dynamic Resources Test" as it was originally meant to only test <span style="color: #488DC1;">Godot's</span> resource system, which acts as the foundation for modding capibilities within <span style="color: red;">Everytale</span>. Howver, after I successfully prototyped that system, I qucikly found myself wanting to prototype other features as well, and the project quickly grew well past its original scope. This has given me a variety of in-engine previews to show you!
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            The rest of this devlog is divided into three main sections. [<u>THE FINAL PROTOTYPE</u>], which focuses on the "Dynamic Resources Test" project and the various features prototyped within; [<u>PRODUCTION</u>], which focuses on the state of the main project as it exists now and the transition from pre-production to pre-alpha; and [<u>GOING FORWARD</u>] which focuses on plans for <span style="color: red;">Everytale</span> in the future and how devlogs will be handled.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Let's begin.
+        </p>
+
+        <div class="BigNewline"><br><br><br></div>
+
+        <center class="BlogSubtitle">[<u>THE FINAL PROTOTYPE</u>]</center>
+        <div class="BigNewline"><br></div>
+        <p>
+            I am reffering to the previously mentioned "Dynamic Resources Test" as the final prototype because I will not be making any more prototype projects at this point. The game is now in pre-alpha, and work on the offical project 
+        </p>
+
+        <div class="BigNewline"><br><br><br></div>
+
+    </div>
+    
+</body>
+
+<script src="../../background_darkener.js"></script>
+
+</html>
