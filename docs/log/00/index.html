@@ -10,7 +10,7 @@
 </head>
 <body style="background-color: #d3bd16;">
 
-    <video autoplay muted loop playsinline src="../../assets/moving_goner_bckg.mp4" id='GonerBckg'></video>
+    <video autoplay muted loop playsinline preload="auto" src="../../assets/moving_goner_bckg.mp4" id='GonerBckg'></video>
     <div id="BckgCover"></div>
 
     <div id="TitleCardContainer">
@@ -19,7 +19,9 @@
 
     <div class="BlogContent">
 
-        <div style="height: 50vh;"></div>
+        <div style="height: 25vh;"></div>
+        <center><p>Written by PixellBytes.</p></center>
+        <div style="height: 25vh;"></div>
 
         <img src="assets/anniversary_symbol_year.png" class="Sprite">
         <center class="BlogSubtitle">[<u>HAPPY ANNIVERSARY</u>]</center>
@@ -45,7 +47,7 @@
 
         <div class="BigNewline"><br></div>
         <p>
-            It conincidentally happens to be <span style="color: red;">Everytale's</span> one month anniversary as well! (Quite the timing, right?) More specifically, it's been exactly one month since --I posted the first version of the game design document to Reddit [INSERT LINK HERE]--. When I initially made that document, I honestly wasn't fully secure in how I felt about the project. I knew it was something I wanted to make, but I was unsure if it was worth putting in the time and effort required to bring it to completion. I decided I would create <span style="color: red;">Everytale's</span> game design document as an excersice in game development, and then post the finished document to the Undertale and Deltarune subreddits where I would maybe get a double digit number of likes if I was lucky, and I would make my decision based on the reception it got.
+            It conincidentally happens to be <span style="color: red;">Everytale's</span> one month anniversary as well! (Quite the timing, right?) More specifically, it's been exactly one month since I posted the first version of the game design document to Reddit (<a href="https://www.reddit.com/r/Undertale/comments/wqwqbf/howdy_i_made_a_game_design_document_for_an_online/">r/Undertale</a> - <a href="https://www.reddit.com/r/Deltarune/comments/wqwtgy/howdy_i_made_a_game_design_document_for_an_online/">r/Deltarune</a>). When I initially made that document, I honestly wasn't fully secure in how I felt about the project. I knew it was something I wanted to make, but I was unsure if it was worth putting in the time and effort required to bring it to completion. I decided I would create <span style="color: red;">Everytale's</span> game design document as an excersice in game development, and then post the finished document to the Undertale and Deltarune subreddits where I would maybe get a double digit number of likes if I was lucky, and I would make my decision based on the reception it got.
         </p>
 
         <div class="BigNewline"><br></div>
@@ -62,7 +64,7 @@
         <center class="BlogSubtitle">[<u>IF YOU'RE NEW HERE</u>]</center>
         <div class="BigNewline"><br></div>
         <p>
-            If you've read up to this point and aren't quite sure what <span style="color: red;">"Everytale"</span> is, allow me to clarify. <span style="color: red;">Everytale</span> is an online Undertale fangame I'm currently developing. The game combines social game elements (i.e. VRChat) with Undertale style turn-based combat for PvE and PvP. Players can hang out, role-play, chat, and battle in an Undertale/Deltarune style world, together! The game will also feature built-in mod tools so players can import/create their own custom characters to play and fight as, all completely cross-platform. If you want more details on the game, you can read the game design document --here [INSERT LINK]--.
+            If you've read up to this point and aren't quite sure what <span style="color: red;">"Everytale"</span> is, allow me to clarify. <span style="color: red;">Everytale</span> is an online Undertale fangame I'm currently developing. The game combines social game elements (i.e. VRChat) with Undertale style turn-based combat for PvE and PvP. Players can hang out, role-play, chat, and battle in an Undertale/Deltarune style world, together! The game will also feature built-in mod tools so players can import/create their own custom characters to play and fight as, all completely cross-platform. If you want more details on the game, you can read the game design document <a href="https://drive.google.com/file/d/1l5m84AWI64ZUALLqnHoz54DZHVn5b3pW/view?usp=sharing">here</a>.
         </p>
 
         <div class="BigNewline"><br><br><br></div>
@@ -174,6 +176,109 @@
         <p>
             While for the most part I knew how I was going to design <span style="color: red;">Everytale's</span> battle system, I wasn't sure how to make the box the player dodges in dynamic. I wanted to make it so that attacks could move and rotate the box, as I thought that would open up a lot of interesting bullet-hell gameplay oppritunities. I spent a day figuring it out, and the above is the result!
         </p>
+
+        <div class="BigNewline"><br><br><br></div>
+
+        <img src="assets/MettatonSuitCackling.gif" class="Sprite">
+        <center class="BlogSubtitle">[<u>PRODUCTION</u>]</center>
+        <div class="BigNewline"><br></div>
+        <p>
+            After I was satisfied with all the prototypes I had created, and as I began to notice it was now approaching one month since I posted the game design document, I decided it was finally time to get the real project set up in <span style="color: #488DC1;">Godot</span>, and set up the repository in GitHub. It might sound silly to dedicate a section to something like this, but it really is both a big step and something I felt I needed to be careful about. It's a big step because setting all this up marks the beginning of a new phase of production, and I needed to be careful because the way I structure the project early on sets precedent for the rest of the game's development, so it's important that said precedent is a healthy one.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            When I set up the project, one of the most critical decisions I had to make was how I was going to structure the file system. Keeping files organized matters in a project like this due to the sheer number of files that will need to be stored. In Dynamic Resources Test, along with every other prototype that came before it, I could reasonably get away with storing files willy-nilly because they were all so small I knew I wouldn't have to worry about finding files later. <i>This is not true for <span style="color: red;">Everytale</span>.</i> But I don't have much experience working with large codebases, so I knew I would need to put extra effort into ensuring the file system stayed navigatable even at a large scale. In the end I would design it something like this:
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <img src="assets/FileSystemStructure.png" class="Sprite">
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Below the root there are three main folders:
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <ul>
+            <li>Assets, which holds art, sound effects, music, fonts, etc.</li>
+            <li>Objects, which holds scene files and script files.</li>
+            <li>Resources (currently absent), which will hold both <span style="color: #488DC1;">Godot</span> and custom resource files.</li>
+        </ul>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Then, each child folder groups categories of files together, getting more specific the further you go down. Organizing the file system this way can make creating new files a pain sometimes, but ultimately avoids technical debt and significantly improves project management.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            You might notice the term "pre-alpha" in the screenshot above. I'm happy to announce that <span style="color: red;">Everytale</span> is now offically in the pre-alpha stage of development! Before, the game was in a combination of the "planning" and "pre-production" stages of development (both simultaneously because I'm only one person). Now that the game is being built, we are in the pre-alpha stage of production. The term "pre-alpha" has a fairly loose definition, and is usually used to describe the stage between the pre-production stage and the alpha stage. A game goes into alpha when it becomes feature complete, but isn't content complete yet. Since we just got started, we are a very long way from the alpha stage. You can expect <span style="color: red;">Everytale</span> to be in pre-alpha for most of its development life. 
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <img src="assets/PreAlpha.png" class="MajorMedia">
+
+        <div class="BigNewline"><br><br><br></div>
+
+        <img src="assets/RightJumpPanel.gif" class="Sprite">
+        <center class="BlogSubtitle">[<u>GOING FORWARD</u>]</center>
+        <div class="BigNewline"><br></div>
+        <p>
+            You are now fully caught up on where we <i>are.</i>
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            The only question left is <i>where do we go from here?</i>
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            The first order of business for <span style="color: red;">Everytale</span> in terms of development will be building the "cosmetic" system (which I'm thinking of renaming to the "character" system) from the game design document. This will be the modded part of the game and the bedrock on which everything else stands on. As such, I am expecting it will be one of (if not the longest) feature implementations in the entire process. Ideally I think it should take me about a month and a half to finish, but I anticipate it could take up to three months of development due to how broad and complex this feature is and how many considerations need to be made regarding every aspect of the game's design.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            What about devlogs like this one? When can you expect more? That question is a bit more complicated... In the past I've said I would release devlogs in line with major features being finished. But I'm not sure how I feel about that idea anymore due to the large variation in the amount of time it takes to implement various features. As I recently stated, the "cosmetic" system could take up to <i>months</i> to finish and I don't want to leave you all hanging that long, especially with the knowledge of how many people actively follow the project. Plus, that can go the other direction too: if multiple major features are implemented quickly, I don't want to rapidly put out devlogs. So I've decided on a compromise that I think allows me to reasably pace myself while still keeping the community happy:
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            <b>You can safely expect devlogs to release at a rate of about one per month.</b> That doesn't mean they'll come out the same day every month, it's not a strict guideline. But as a rough estimate, you can hold that expectation going forwards.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            One more thing about the devlogs, and that is their length. I'm going to be honest here... writing this was absolutely brutal. I recognize part of that has to do with building an entire site to hold these logs, but even writing this post took significantly longer than I expected. It's the first time I've ever felt stressed working on this project. I only have my limited free time to work on this, and time I spend writing devlogs is time I'm not spending developing the game. So in the future you should expect devlogs to be shorter. Don't worry though, as they'll also be far more focused on the technical side of things than this one was, and I'll be sure to bring new gameplay and engine snippets with me to every single post!
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Before I close this out, there's a question I'm sure a lot of you have been wondering that I want to put to rest. When will you actually get to play <span style="color: red;">Everytale</span>? I have nothing to say on the topic of a potential release date -- the game is simply too early in development for me to speak on that. But I would like to make a big commitment here. <b>I want <span style="color: red;">Everytale</span> to, at minimum, have a publicly playable alpha build by a year from posting this devlog.</b> I see how many people are as passionate about this concept as I am, so I would like to get a version you can play out as soon as possible! It will be a lot of work to get there, but I firmly it's achievable and that the effort will prove worth it.
+        </p>
+
+        <div class="BigNewline"><br><br><br></div>
+        <img src="../../assets/RalseiWaving.gif" class="Sprite">
+        <center class="BlogSubtitle">[<u>UNTIL NEXT TIME</u>]</center>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            Thank you for reading the whole way through! This took much longer to write than I thought it would, so the fact that you took the time to read the whole thing means a lot. That's all the updates for now, but I'll be back with more in about a month! If you want to get notified when I post new devlogs, you can follow me on <a href="https://www.reddit.com/user/PixellBytes">Reddit</a> or <a href="https://twitter.com/PixellBytes">Twitter</a>.
+        </p>
+
+        <div class="BigNewline"><br></div>
+        <p>
+            See you all next time!
+        </p>
+
+        <div class="BigNewline"><br><br><br></div>
+
+        <div class="NavigationBox">
+            <p>
+                * <a href="../../index.html">Go back to the homepage.</a>
+            </p>
+        </div>
 
         <div class="BigNewline"><br><br><br></div>
 
